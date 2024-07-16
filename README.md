@@ -53,7 +53,7 @@ w = model._w
 # y = - (w0*x + w2) / w1
 plt.plot(X[:, 0], - (w[0] * X[:, 0] + w[2]) / w[1])
 ```
-![LinearSVM plot](https://github.com/obizip/simplesvm/blob/main/images/linear_svm.png)
+![LinearSVM plot](https://github.com/obizip/simplesvm/blob/5b92e3c69cb550b4fc9531acec1d5f378dcb16e8/images/linear_svm.png)
 
 ### KernelSVM
 ```python
@@ -89,7 +89,7 @@ plt.contourf(xx, yy, z.reshape(xx.shape), alpha=0.2, cmap=plt.cm.coolwarm)
 plt.scatter(X[:, 0], X[:, 1], c=y, s=10, cmap=plt.cm.coolwarm)
 plt.show()
 ```
-![KernelSVM plot](https://github.com/obizip/simplesvm/blob/main/images/kernel_svm.png)
+![KernelSVM plot](https://github.com/obizip/simplesvm/blob/5b92e3c69cb550b4fc9531acec1d5f378dcb16e8/images/kernel_svm.png)
 
 ## License
 
