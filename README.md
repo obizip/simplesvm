@@ -10,7 +10,7 @@ A simple Support Vector Machine for binary classification with scikit-learn like
 - Repository: https://github.com/obizip/simplesvm
 - About this SVM (ja)
     - LinearSVM: https://zenn.dev/obizip/articles/2024-07-04-linear_svm
-    - KernelSVM:
+    - KernelSVM: https://zenn.dev/obizip/articles/2024-07-05-kernel_svm
 
 ## Installation
 
@@ -53,6 +53,7 @@ w = model._w
 # y = - (w0*x + w2) / w1
 plt.plot(X[:, 0], - (w[0] * X[:, 0] + w[2]) / w[1])
 ```
+![LinearSVM plot](https://github.com/obizip/simplesvm/blob/main/images/linear_svm.png)
 
 ### KernelSVM
 ```python
@@ -73,12 +74,13 @@ model.fit(X_train, y_train)
 preds = model.predict(X_test)
 
 print(f"ACC: {accuracy_score(y_test, preds)}")
+#> ACC: 0.992
 
 # Plot a decision boundary
-x_min=X[:, 0].min()
-x_max=X[:, 0].max()
-y_min=X[:, 1].min()
-y_max=X[:, 1].max()
+x_min=X[:, 0].min() - 0.5
+x_max=X[:, 0].max() + 0.5
+y_min=X[:, 1].min() - 0.5
+y_max=X[:, 1].max() + 0.5
 
 xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.01), np.arange(y_min, y_max, 0.01))
 XY = np.array([xx.ravel(), yy.ravel()]).T
@@ -87,6 +89,7 @@ plt.contourf(xx, yy, z.reshape(xx.shape), alpha=0.2, cmap=plt.cm.coolwarm)
 plt.scatter(X[:, 0], X[:, 1], c=y, s=10, cmap=plt.cm.coolwarm)
 plt.show()
 ```
+![KernelSVM plot](https://github.com/obizip/simplesvm/blob/main/images/kernel_svm.png)
 
 ## License
 
