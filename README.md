@@ -24,7 +24,7 @@ pip install simplesvm
 from simplesvm import LinearSVM
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.datasets import make_moons
+from sklearn.datasets import make_blobs
 from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 
